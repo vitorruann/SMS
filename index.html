@@ -28,7 +28,7 @@
 
     <div class="container">
         <header class="App-header"><img src="empresa-intelbras.jpg" alt="logo" class="logo">
-            <form name="form1" ction="">
+            <form name="form1" action="" method="POST">
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="IP_EQUIPAMENTO">IP do equipamento</label>
@@ -59,8 +59,8 @@
         IP = document.getElementById('IP_EQUIPAMENTO').value;
         Num = document.getElementById('NUMERO_DESTINO').value;
         Mens = document.getElementById('MENSAGEM_SMS').value;
-        var final = "?";
-        document.form1.action = "http://10.1.43.15/sms/enviar.html/destino=988570704&mensagem=teste11?id=0";
+
+        document.form1.action = "http://" + IP +"/sms/enviar.html/destino=" + Num+ "&mensagem="+ Mens + "?";
 
         //"http://" + IP +"/sms/enviar.html/destino=" + Num+ "&mensagem="+ Mens + "?&"
     }
