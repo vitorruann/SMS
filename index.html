@@ -14,56 +14,64 @@
 <body>
 
     <div class="conteiner">
-        <nav class="navbar navbar-light bg-light">
-            <a class="navbar-brand" href="#">
-                <img src="thumbnail_Outlook-http___www.png" width="100" height="50" class="d-inline-block align-top "
-                    alt="">
-                Envio de SMS centrais/Gw's
+        <nav class="navbar navbar-light" style="background-color:#00a335;">
+            <a class="navbar-brand" href="index.html">
+                <img src="intelbras_sempre_proxima_branco.png" width="100" height="50" class="d-inline-block align-top " alt="">
             </a>
         </nav>
     </div>
     <!--
                 http://IP_EQUIPAMENTO/sms/enviar.html/destino=NUMERO_DESTINO&mensagem=MENSAGEM_SMS?
             -->
+    <div class="row">
+        <div class="col-1 menuLateral">
+            <nav class="nav flex-column">
+                <a class="nav-link active" href="index.html">Envio SMS</a>
+            </nav>
+        </div>
+        <div class="container back">
 
-    <div class="container">
-        <header class="App-header"><img src="empresa-intelbras.jpg" alt="logo" class="logo">
-            <form name="form1" ction="">
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label for="IP_EQUIPAMENTO">IP do equipamento</label>
-                        <input type="text" class="form-control" id="IP_EQUIPAMENTO"
-                            placeholder="Digite o IP do equipamento que fará o envio">
+            
+                <h1>Envio de SMS centrais/Gw's</h1>
+                <form name="form1" action="" method="POST">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="IP_EQUIPAMENTO">IP do equipamento</label>
+                            <input type="text" class="form-control" id="IP_EQUIPAMENTO"
+                                placeholder="Digite o IP do equipamento que fará o envio">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="NUMERO_DESTINO">Número de destino</label>
+                            <input type="" class="form-control" id="NUMERO_DESTINO"
+                                placeholder="Digite o número de destino">
+                        </div>
                     </div>
-                    <div class="form-group col-md-6">
-                        <label for="NUMERO_DESTINO">Número de destino</label>
-                        <input type="text" class="form-control" id="NUMERO_DESTINO"
-                            placeholder="Digite o número de destino">
+                    <div class="form-group">
+                        <label for="MENSAGEM_SMS">Mensagem</label>
+                        <textarea class="form-control" name="MENSAGEM_SMS" id="MENSAGEM_SMS" cols="20" rows="5"></textarea>
+                        <!--
+                        <input type="text" class="form-control" id="MENSAGEM_SMS" placeholder="Mensagem a ser enviada">
+                        -->
+                            
                     </div>
-                </div>
-                <div class="form-group">
-                    <label for="MENSAGEM_SMS">Mensagem</label>
-                    <input type="text" class="form-control" id="MENSAGEM_SMS" placeholder="Mensagem a ser enviada">
-                </div>
-                <button type="submit" onclick="func();" class="btn btn-primary">Enviar</button>
-
+                    <button type="submit" onclick="func();" class="btn btn-light">Enviar</button>
+            
+        </div>
     </div>
     </form>
-    </header>
-
-
 
     <script>
-    
-    function func() {
-        IP = document.getElementById('IP_EQUIPAMENTO').value;
-        Num = document.getElementById('NUMERO_DESTINO').value;
-        Mens = document.getElementById('MENSAGEM_SMS').value;
-        var final = "?";
-        document.form1.action = "http://10.1.43.15/sms/enviar.html/destino=988570704&mensagem=teste11?id=0";
 
-        //"http://" + IP +"/sms/enviar.html/destino=" + Num+ "&mensagem="+ Mens + "?&"
-    }
+        function func() {
+            IP = document.getElementById('IP_EQUIPAMENTO').value;
+            Num = document.getElementById('NUMERO_DESTINO').value;
+            Mens = document.getElementById('MENSAGEM_SMS').value;
+
+            document.form1.action = "http://" + IP + "/sms/enviar.html/destino=" + Num + "&mensagem=" + Mens + "?";
+
+            //"http://" + IP +"/sms/enviar.html/destino=" + Num+ "&mensagem="+ Mens + "?&"
+            //n
+        }
     </script>
 
 
